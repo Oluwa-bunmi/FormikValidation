@@ -2,7 +2,12 @@ import * as yup from "yup";
 export const formSchema = yup.object().shape({
   first_name: yup.string().required("Required"),
   last_name: yup.string().required("Required"),
-  phone_number: yup.number().required("Required"),
+  phone_number: yup
+    .number()
+    .required("Please enter a number")
+    .positive("Please enter a positive number")
+    .integer("Please enter an integer")
+    .min(11, "Invalid Phone Number"),
 
   email: yup.string().email("Invalid email").required("Required"),
   // phone_number: yup

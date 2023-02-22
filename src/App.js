@@ -29,6 +29,16 @@ function App() {
     validationSchema: formSchema,
     onSubmit,
   });
+  // .no-arrows {
+  //   -moz-appearance: textfield; /* Firefox */
+  // }
+
+  // .no-arrows::-webkit-outer-spin-button,
+  // .no-arrows::-webkit-inner-spin-button {
+  //   -webkit-appearance: none;
+  //   margin: 0;
+  // }
+
   return (
     <div className="App flex justify-center items-center h-screen bg-[#9633ff]">
       <form
@@ -140,7 +150,7 @@ function App() {
               value={values.phone_number}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="outline-none w-full "
+              className="outline-none w-full appearance-none"
             />
           </div>
           {errors.phone_number && touched.phone_number && (
